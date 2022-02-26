@@ -16,7 +16,7 @@ export const NavigationLink = (props: NavigationLinkProps) => {
 
   return (
     <Link href={route}>
-      <Button size="sm">
+      <Button size="sm" mr="10px">
         {getRouteNameForLocale(route, currentLocale)}
       </Button>
     </Link>

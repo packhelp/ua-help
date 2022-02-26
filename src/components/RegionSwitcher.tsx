@@ -1,22 +1,31 @@
 import React from "react"
 import { useRouter } from 'next/router';
-import { locales } from "../utils/routes"
+import { LocaleFlags, LocaleNames, locales } from "../utils/routes"
 import Link from "next/link"
+import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/menu"
 
 export const RegionSwitcher = () => {
-  const { asPath } = useRouter();
+  const { asPath, locale } = useRouter();
 
   return (
     <div>
-      {locales.map((l, i) => {
-        return (
-          <span key={i} >
-                <Link href={asPath} locale={l}>
-                  {l}
-                </Link>
-              </span>
-        );
-      })}
+      <Menu>
+        <MenuButton>
+          {LocaleFlags[locale]}
+        </MenuButton>
+
+        <MenuList>
+          {locales.map((l, i) => {
+            return (
+              <Link key={l} href={asPath} locale={l}>
+                <MenuItem>
+                  {LocaleFlags[l]} {LocaleNames[l]}
+                </MenuItem>
+              </Link>
+            )
+          })}
+        </MenuList>
+      </Menu>
     </div>
   )
 }

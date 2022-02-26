@@ -1,5 +1,5 @@
-import React from "react";
-import { chakra, useColorModeValue } from "@chakra-ui/react";
+import React from "react"
+import { chakra, Flex, useColorModeValue } from "@chakra-ui/react"
 import { NavigationLinks } from "./NavigationLinks"
 import { RegionSwitcher } from "./RegionSwitcher"
 
@@ -14,8 +14,12 @@ export const HeaderNavigation = () => {
       shadow="md"
       mb={10}
     >
-      <NavigationLinks />
-      <RegionSwitcher />
+      <Flex justifyContent={"space-between"} display={{ base: "none", sm: "none", md: "flex" }}>
+        <div>
+          <NavigationLinks />
+        </div>
+        <RegionSwitcher />
+      </Flex>
     </chakra.header>
   )
 }
