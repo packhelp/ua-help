@@ -14,7 +14,7 @@ import {
   Link, Flex, SpaceProps, HStack, Tag, Button, Divider,
 } from "@chakra-ui/react"
 import { config } from "../../src/config"
-import { translations } from "../../src/utils/translations"
+import { Locales, translations } from "../../src/utils/translations"
 import { useRouter } from "next/router"
 import { Tags } from "../../src/components/Tags"
 
@@ -34,7 +34,12 @@ const data = {
 
 export default function Simple() {
   const { locale } = useRouter()
-  
+
+  let finalLocale: Locales = "uk-UA"
+  if (locale != null) {
+    finalLocale = locale as any as Locales
+  }
+
   const descriptionSplitByNewLines = data.description.split("\n")
 
   return (
@@ -71,8 +76,8 @@ export default function Simple() {
               />
             }>
             <VStack spacing={{ base: 4, sm: 6 }}>
-              {descriptionSplitByNewLines.map(descriptionLine => (
-                <Text fontSize={"lg"}>
+              {descriptionSplitByNewLines.map((descriptionLine, index) => (
+                <Text key={index} fontSize={"lg"}>
                   {descriptionLine}
                 </Text>
               ))}
@@ -89,25 +94,25 @@ export default function Simple() {
               fontWeight={"500"}
               textTransform={"uppercase"}
               mb={"4"}>
-              {translations[locale]["details-page"]["entity-information-section-title"]}
+              {translations[finalLocale]["details-page"]["entity-information-section-title"]}
             </Text>
 
             <List spacing={2}>
               <ListItem>
                 <Text as={"span"} fontWeight={"bold"}>
-                  {translations[locale]["details-page"]["full-name"]}:
+                  {translations[finalLocale]["details-page"]["full-name"]}:
                 </Text>{" "}
                 {data.fullName}
               </ListItem>
               <ListItem>
                 <Text as={"span"} fontWeight={"bold"}>
-                  {translations[locale]["details-page"]["help-type"]}:
+                  {translations[finalLocale]["details-page"]["help-type"]}:
                 </Text>{" "}
                 {data.helpType}
               </ListItem>
               <ListItem>
                 <Text as={"span"} fontWeight={"bold"}>
-                  {translations[locale]["details-page"]["website"]}:
+                  {translations[finalLocale]["details-page"]["website"]}:
                 </Text>{" "}
                 <Link href={data.website}>
                   {data.website}
@@ -115,7 +120,7 @@ export default function Simple() {
               </ListItem>
               <ListItem>
                 <Text as={"span"} fontWeight={"bold"}>
-                  {translations[locale]["details-page"]["phone"]}:
+                  {translations[finalLocale]["details-page"]["phone"]}:
                 </Text>{" "}
                 <Link href={`tel:${data.phone}`}>
                   {data.phone}
@@ -123,7 +128,7 @@ export default function Simple() {
               </ListItem>
               <ListItem>
                 <Text as={"span"} fontWeight={"bold"}>
-                  {translations[locale]["details-page"]["email"]}:
+                  {translations[finalLocale]["details-page"]["email"]}:
                 </Text>{" "}
                 <Link href={`mail:${data.email}`}>
                   {data.email}
@@ -131,7 +136,7 @@ export default function Simple() {
               </ListItem>
               <ListItem>
                 <Text as={"span"} fontWeight={"bold"}>
-                  {translations[locale]["details-page"]["area-covered"]}:
+                  {translations[finalLocale]["details-page"]["area-covered"]}:
                 </Text>{" "}
                 {data.areaCovered}
               </ListItem>
@@ -143,11 +148,11 @@ export default function Simple() {
               align="stretch"
             >
               <Button colorScheme="blue" size="lg" minWidth="100%">
-                {translations[locale]["details-page"]["comment-button"]}
+                {translations[finalLocale]["details-page"]["comment-button"]}
               </Button>
               <Link href={config.reportAbuseFormLink} target="_blank">
                 <Button colorScheme="red" size="lg" minWidth="100%">
-                  {translations[locale]["details-page"]["report-abuse-button"]}
+                  {translations[finalLocale]["details-page"]["report-abuse-button"]}
                 </Button>
               </Link>
             </VStack>
