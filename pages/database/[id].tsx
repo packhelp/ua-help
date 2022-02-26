@@ -56,14 +56,6 @@ export default function Simple() {
               fontSize={{ base: "2xl", sm: "4xl", lg: "5xl" }}>
               {data.fullName}
             </Heading>
-            {/*<Text*/}
-            {/*  color={useColorModeValue("gray.500", "gray.400")}*/}
-            {/*  fontWeight={300}*/}
-            {/*  fontSize={"2xl"}*/}
-            {/*  mt="20px"*/}
-            {/*>*/}
-            {/*  Collecting clothes, Accommodation, Coordination*/}
-            {/*</Text>*/}
             <Tags tags={["Collecting clothes", "Accommodation", "Coordination"]} marginTop="3" />
           </Box>
 
@@ -157,20 +149,8 @@ export default function Simple() {
               </Link>
             </VStack>
           </Box>
-
         </Flex>
       </SimpleGrid>
     </Container>
   )
 }
-//    "details-page": {
-//       "comment-button": "Comment",
-//       "report-abuse-button": "Report abuse",
-//       "entity-information-section-title": "Entity information",
-//       "full-name": "Full name",
-//       "help-type": "Help type",
-//       "website": "Website",
-//       "phone": "Phone number",
-//       "email": "Email",
-//       "area-covered": "Area covered",
-//     }
