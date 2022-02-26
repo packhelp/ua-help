@@ -1,5 +1,6 @@
 import React from "react";
 import { chakra, Flex, useColorModeValue } from "@chakra-ui/react"
+import { LocaleFlags, LocaleDefinitions } from "../utils/routes"
 
 export const FooterNavigation = () => {
   const bg = useColorModeValue("white", "blue.500")
@@ -12,7 +13,9 @@ export const FooterNavigation = () => {
       shadow="md"
     >
       <Flex justifyContent={"center"}>
-        {"Poland <3 Ukraine"}
+        {LocaleFlags[LocaleDefinitions.PL]}
+        {" Poland ❤️ Ukraine "}
+        {LocaleFlags[LocaleDefinitions.UA]}
       </Flex>
     </chakra.footer>
   )

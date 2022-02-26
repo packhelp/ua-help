@@ -28,7 +28,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <FooterNavigation />
     </ChakraProvider>
   )
-  // return <Component {...pageProps} />
 }
 
 export default MyApp
