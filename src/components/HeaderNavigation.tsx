@@ -59,7 +59,7 @@ const Mobile = () => {
         <RegionSwitcher />
       </Flex>
       {isOpen && (
-        <Box pb={4} width={"100%"} paddingTop={4}>
+        <Box width={"100%"}>
           <Stack as={'nav'} spacing={4}>
             <NavigationLinks />
           </Stack>
