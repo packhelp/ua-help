@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react"
 import { useRouter } from "next/router"
 import { translations, Locales } from "../src/utils/translations"
+import { config } from "../src/config"
 
 const Home: NextPage = () => {
   const { locale } = useRouter()
@@ -51,7 +52,7 @@ const Home: NextPage = () => {
             {translations[finalLocale]["main-page"]["i-need-help-button"]}
           </Button>
           <Link
-            href="https://docs.google.com/forms/d/1EFouRYTfOeiFs6fw9mJriJsIRwRrBrdTkLU1sh9s--g/edit"
+            href={config.addNewEntityFormLink}
             target="_blank"
           >
             <Button
