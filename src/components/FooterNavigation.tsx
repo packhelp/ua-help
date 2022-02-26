@@ -14,7 +14,7 @@ export const FooterNavigation = () => {
     >
       <Flex justifyContent={"center"}>
         {LocaleFlags[LocaleDefinitions.PL]}
-        {" Poland <3 Ukraine "}
+        {" Poland ❤️ Ukraine "}
         {LocaleFlags[LocaleDefinitions.UA]}
       </Flex>
     </chakra.footer>
