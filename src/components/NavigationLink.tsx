@@ -10,13 +10,15 @@ type NavigationLinkProps = {
 
 export const NavigationLink = (props: NavigationLinkProps) => {
   const { route } = props
-  const { locale } = useRouter();
+  const { locale, asPath } = useRouter();
 
   const currentLocale = locale as Locale
 
+  const isRouteActive = asPath === route
+
   return (
     <Link href={route}>
-      <Button size="sm" mr="10px">
+      <Button size="sm" variant={isRouteActive ? "solid" : "ghost"}>
         {getRouteNameForLocale(route, currentLocale)}
       </Button>
     </Link>

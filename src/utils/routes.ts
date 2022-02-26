@@ -36,7 +36,3 @@ export type Routes =
 export const getRouteNameForLocale = (route: Routes, locale: Locale = LocaleDefinitions.US) => {
   return translations[locale][route]
 }
-
-export const isRouteActive = (route: Routes) => {
-  return window.location.pathname === route
-}

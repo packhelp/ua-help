@@ -1,5 +1,14 @@
 import React from "react"
-import { chakra, Flex, useColorModeValue } from "@chakra-ui/react"
+import {
+  chakra,
+  Flex,
+  IconButton,
+  Box,
+  Stack,
+  useColorModeValue,
+  useDisclosure
+} from "@chakra-ui/react"
+import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 import { NavigationLinks } from "./NavigationLinks"
 import { RegionSwitcher } from "./RegionSwitcher"
 
@@ -14,12 +23,48 @@ export const HeaderNavigation = () => {
       shadow="md"
       mb={10}
     >
-      <Flex justifyContent={"space-between"} display={{ base: "none", sm: "none", md: "flex" }}>
-        <div>
-          <NavigationLinks />
-        </div>
+      <Desktop />
+      <Mobile />
+    </chakra.header>
+  )
+}
+
+const Desktop = () => {
+  return (
+    <Flex justifyContent={"space-between"} display={{ base: "none", sm: "none", md: "flex" }}>
+      <div>
+        <NavigationLinks />
+      </div>
+      <RegionSwitcher />
+    </Flex>
+  )
+}
+
+const Mobile = () => {
+  const { isOpen = false, onOpen, onClose } = useDisclosure();
+
+  return (
+    <Flex alignItems={"center"} flexDirection={"column"} display={{ base: "flex", sm: "flex", md: "none" }}>
+      <Flex alignItems={"center"} justifyContent={"space-between"} width={"100%"} paddingRight={"10px"}>
+        <IconButton
+          display={{ base: "flex", md: "none" }}
+          alignItems={"center"}
+          aria-label="Open menu"
+          fontSize="20px"
+          color={useColorModeValue("gray.800", "inherit")}
+          variant="ghost"
+          icon={isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+          onClick={isOpen ? onClose: onOpen}
+        />
         <RegionSwitcher />
       </Flex>
-    </chakra.header>
+      {isOpen && (
+        <Box pb={4} width={"100%"} paddingTop={4}>
+          <Stack as={'nav'} spacing={4}>
+            <NavigationLinks />
+          </Stack>
+        </Box>
+      )}
+    </Flex>
   )
 }
