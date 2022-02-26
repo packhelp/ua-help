@@ -1,7 +1,11 @@
 import type { NextPage } from "next"
 import { Button, Container, Flex, Heading, Link, Stack, Text } from "@chakra-ui/react"
+import { useRouter } from "next/router"
+import { translations } from "../src/utils/translations"
 
 const Home: NextPage = () => {
+  const { locale } = useRouter()
+
   return (
     <Container maxW={'5xl'}>
       <Stack
@@ -13,13 +17,13 @@ const Home: NextPage = () => {
           fontWeight={600}
           fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
           lineHeight={'110%'}>
-          Helping Ukraine{' '}
+          {translations[locale]["main-page"]["title-1"]}{' '}
           <Text as={'span'} color={'green.400'}>
-            made easy
+            {translations[locale]["main-page"]["title-2"]}
           </Text>
         </Heading>
         <Text color={'gray.500'} maxW={'3xl'}>
-          We are here to help connect people in need with people that can provide help. Need lawyer, job, transport, medical aid, or something else? We got you!
+          {translations[locale]["main-page"]["description"]}
         </Text>
         <Stack spacing={6} direction={'row'}>
           <Button
@@ -28,7 +32,7 @@ const Home: NextPage = () => {
             colorScheme={'orange'}
             bg={'green.400'}
             _hover={{ bg: 'green.500' }}>
-            I need help
+            {translations[locale]["main-page"]["i-need-help-button"]}
           </Button>
           <Link
             href="https://docs.google.com/forms/d/1EFouRYTfOeiFs6fw9mJriJsIRwRrBrdTkLU1sh9s--g/edit"
@@ -41,7 +45,7 @@ const Home: NextPage = () => {
             bg={'blue.400'}
             _hover={{ bg: 'blue.500' }}
           >
-            I want to help
+            {translations[locale]["main-page"]["i-wanna-help-button"]}
           </Button>
           </Link>
         </Stack>
