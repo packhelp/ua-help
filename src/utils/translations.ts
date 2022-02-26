@@ -18,6 +18,17 @@ export const translations: Translation = {
       "i-need-help-button": "I need help",
       "i-wanna-help-button": "I wanna help",
     },
+    "details-page": {
+      "comment-button": "Comment",
+      "report-abuse-button": "Report abuse",
+      "entity-information-section-title": "Entity information",
+      "full-name": "Full name",
+      "help-type": "Help type",
+      "website": "Website",
+      "phone": "Phone number",
+      "email": "Email",
+      "area-covered": "Area covered",
+    }
   },
   "pl-PL": {
     "/page-1": "Strona 1",
@@ -31,6 +42,17 @@ export const translations: Translation = {
       "i-need-help-button": "Potrzebuję pomocy",
       "i-wanna-help-button": "Chcę pomóc",
     },
+    "details-page": {
+      "comment-button": "Skomentuj",
+      "report-abuse-button": "Zgłoś naruszenie",
+      "entity-information-section-title": "Informacje o bycie",
+      "full-name": "Pełna nazwa",
+      "help-type": "Typ pomocy",
+      "website": "Strona",
+      "phone": "Telefon",
+      "email": "E-mail",
+      "area-covered": "Miejsce pomocy",
+    }
   },
   "uk-UA": {
     "/page-1": "Strona 1",
@@ -43,5 +65,16 @@ export const translations: Translation = {
       "i-need-help-button": "<missing_translation>",
       "i-wanna-help-button": "<missing_translation>",
     },
-  },
+    "details-page": {
+      "comment-button": "<missing_translation>",
+      "report-abuse-button": "<missing_translation>",
+      "entity-information-section-title": "<missing_translation>",
+      "full-name": "<missing_translation>",
+      "help-type": "<missing_translation>",
+      "website": "<missing_translation>",
+      "phone": "<missing_translation>",
+      "email": "<missing_translation>",
+      "area-covered": "<missing_translation>",
+    }
+  }
 }
