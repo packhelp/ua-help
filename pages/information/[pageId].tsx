@@ -47,7 +47,7 @@ export async function getStaticPaths() {
     notion.getPage.bind(notion),
     {
       traverseCollections: false,
-    },
+    }
   )
 
   const paths = Object.keys(pages).map((pageId) => `/${pageId}`)
@@ -81,20 +81,20 @@ export default function NotionPage({ recordMap }) {
         rootDomain="localhost:9090" // used to detect root domain links and open this in the same tab
         components={{
           image: ({
-                    src,
-                    alt,
+            src,
+            alt,
 
-                    height,
-                    width,
+            height,
+            width,
 
-                    className,
-                    style,
-                    loading,
-                    decoding,
+            className,
+            style,
+            loading,
+            decoding,
 
-                    ref,
-                    onLoad,
-                  }) => (
+            ref,
+            onLoad,
+          }) => (
             <img
               className={className}
               style={style}

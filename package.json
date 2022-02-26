@@ -9,7 +9,7 @@
     "-----------TESTS--------------": "",
     "test": "NODE_OPTIONS=\"--unhandled-rejections=strict\" react-scripts test",
     "-----------LINTERS------------": "",
-    "lint": "next lint",
+    "lint": "next lint && yarn lint:prettier",
     "lint:prettier": "prettier --check './src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
     "pretty": "prettier --write './pages/**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
