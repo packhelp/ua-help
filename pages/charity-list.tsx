@@ -5,22 +5,22 @@ import Image from "next/image"
 import styles from "../styles/Home.module.css"
 import { CharityDataTable } from "../src/components/componets"
 import { getRootContainer } from "../src/services/_root-container"
-import { CharityDataStore } from "../src/services/charity-data"
+import { CharityDataStore, CharityDTO } from "../src/services/charity-data"
 
 export const getStaticProps = async (context) => {
   const root = getRootContainer()
-  const charityData = await root.containers.charityDataStore
+  const charityDataDTO = await root.containers.charityDataDTO
   return {
     props: {
-      charityData,
+      charityDataDTO,
     },
   }
 }
 interface ChrityPageProps {
-  charityData: CharityDataStore
+  charityDataDTO: CharityDTO[]
 }
 
-const CharityList: NextPage<ChrityPageProps> = ({ charityData }) => {
+const CharityList: NextPage<ChrityPageProps> = ({ charityDataDTO }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -30,7 +30,7 @@ const CharityList: NextPage<ChrityPageProps> = ({ charityData }) => {
       </Head>
 
       <main className={styles.main}>
-        <CharityDataTable charityData={charityData} />
+        <CharityDataTable charityDataDTO={charityDataDTO} />
       </main>
 
       <footer className={styles.footer}>footer</footer>

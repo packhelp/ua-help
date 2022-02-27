@@ -9,14 +9,15 @@ import {
   Td,
   TableCaption,
 } from "@chakra-ui/react"
-import { CharityDataStore } from "../services/charity-data"
+import { CharityDataStore, CharityDTO } from "../services/charity-data"
 
 interface CharityTableProps {
-  charityData: CharityDataStore
+  charityDataDTO: CharityDTO[]
 }
 
-export const CharityDataTable = ({ charityData }: CharityTableProps) => {
-  const pub = charityData.publicCharityData
+export const CharityDataTable = ({ charityDataDTO }: CharityTableProps) => {
+  const cds = new CharityDataStore(charityDataDTO)
+  const pub = cds.publicCharityData
 
   return (
     <Table variant="simple">
