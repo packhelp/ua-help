@@ -9,15 +9,7 @@ import {
   Td,
   TableCaption,
 } from "@chakra-ui/react"
-import { getRootContainer } from "./services/_root-container"
-import { RootContext, useContainer } from "./services/_continer.hooks"
-
-export const RootContainerWrapper = React.memo(
-  function RootContainerWrapperInside({ children }: { children: ReactNode }) {
-    const store = useMemo(() => getRootContainer(), [])
-    return <RootContext.Provider value={store}>{children}</RootContext.Provider>
-  }
-)
+import { useContainer } from "../services/_continer.hooks"
 
 export const CharityDataTable = () => {
   const [charitData] = useContainer().charityData

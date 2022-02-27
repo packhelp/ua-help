@@ -3,8 +3,7 @@ import Head from "next/head"
 import Link from "next/link"
 import Image from "next/image"
 import styles from "../styles/Home.module.css"
-
-import { CharityDataTable, RootContainerWrapper } from "./componets"
+import { CharityDataTable } from "../src/components/componets"
 
 const CharityList: NextPage = () => {
   return (

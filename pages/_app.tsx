@@ -18,7 +18,7 @@ import "katex/dist/katex.min.css"
 
 // Override notion css
 import "./../public/notion-override.css"
-import { RootContainerWrapper } from "./componets"
+import { RootContainerWrapper } from "../src/services/_container.root-wrapper"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

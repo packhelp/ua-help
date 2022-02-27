@@ -1,6 +1,6 @@
 //sdfsd
 import { makeRoot } from "iti"
-import { charityDataProvider, CharityData } from "./data"
+import { charityDataProvider, CharityData } from "./charity-data"
 
 export function getRootContainer() {
   return makeRoot()
