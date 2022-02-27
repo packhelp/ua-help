@@ -51,10 +51,7 @@ const Home: NextPage = () => {
           >
             {translations[finalLocale]["main-page"]["i-need-help-button"]}
           </Button>
-          <Link
-            href={config.addNewEntityFormLink}
-            target="_blank"
-          >
+          <Link href={config.addNewEntityFormLink} target="_blank">
             <Button
               rounded={"full"}
               px={6}

@@ -18,13 +18,16 @@ import "katex/dist/katex.min.css"
 
 // Override notion css
 import "./../public/notion-override.css"
+import { RootContainerWrapper } from "../src/services/_container.root-wrapper"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider>
-      <HeaderNavigation />
-      <Component {...pageProps} />
-      <FooterNavigation />
+      <RootContainerWrapper>
+        <HeaderNavigation />
+        <Component {...pageProps} />
+        <FooterNavigation />
+      </RootContainerWrapper>
     </ChakraProvider>
   )
 }

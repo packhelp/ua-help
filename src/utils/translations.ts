@@ -7,6 +7,7 @@ type Translation = {
 
 export const translations: Translation = {
   "en-US": {
+    "/charity-list": "Charity List",
     "/page-1": "Page 1",
     "/page-2": "Page 2",
     "/information/df245e9b8f824a93b58f30730034a5c7": "Information",
@@ -24,13 +25,14 @@ export const translations: Translation = {
       "entity-information-section-title": "Entity information",
       "full-name": "Full name",
       "help-type": "Help type",
-      "website": "Website",
-      "phone": "Phone number",
-      "email": "Email",
+      website: "Website",
+      phone: "Phone number",
+      email: "Email",
       "area-covered": "Area covered",
-    }
+    },
   },
   "pl-PL": {
+    "/charity-list": "Charity List",
     "/page-1": "Strona 1",
     "/page-2": "Strona 2",
     "/information/df245e9b8f824a93b58f30730034a5c7": "Informacje",
@@ -48,13 +50,14 @@ export const translations: Translation = {
       "entity-information-section-title": "Informacje o bycie",
       "full-name": "Pełna nazwa",
       "help-type": "Typ pomocy",
-      "website": "Strona",
-      "phone": "Telefon",
-      "email": "E-mail",
+      website: "Strona",
+      phone: "Telefon",
+      email: "E-mail",
       "area-covered": "Miejsce pomocy",
-    }
+    },
   },
   "uk-UA": {
+    "/charity-list": "Charity List",
     "/page-1": "Strona 1",
     "/page-2": "Strona 2",
     "/information/df245e9b8f824a93b58f30730034a5c7": "Information",
@@ -71,10 +74,10 @@ export const translations: Translation = {
       "entity-information-section-title": "<missing_translation>",
       "full-name": "<missing_translation>",
       "help-type": "<missing_translation>",
-      "website": "<missing_translation>",
-      "phone": "<missing_translation>",
-      "email": "<missing_translation>",
+      website: "<missing_translation>",
+      phone: "<missing_translation>",
+      email: "<missing_translation>",
       "area-covered": "<missing_translation>",
-    }
-  }
+    },
+  },
 }
