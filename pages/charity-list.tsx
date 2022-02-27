@@ -33,7 +33,7 @@ const CharityList: NextPage<ChrityPageProps> = ({ charityDataDTO }) => {
         <CharityDataTable charityDataDTO={charityDataDTO} />
       </main>
 
-      <footer className={styles.footer}>footer</footer>
+      {/*<footer className={styles.footer}>footer</footer>*/}
     </div>
   )
 }

@@ -33,6 +33,6 @@ export class CharityDataStore {
   constructor(private readonly _charityData: CharityDTO[]) {}
 
   get publicCharityData() {
-    return this._charityData.filter((el) => el.public)
+    return this._charityData.filter((el) => el.public === true)
   }
 }
