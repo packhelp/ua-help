@@ -3,24 +3,31 @@ import { translations } from "./translations"
 export enum LocaleDefinitions {
   PL = "pl-PL",
   US = "en-US",
-  UA = "uk-UA"
+  UA = "uk-UA",
 }
 
 export enum LocaleFlags {
   "pl-PL" = "🇵🇱",
   "en-US" = "🇺🇸",
-  "uk-UA" = "🇺🇦"
+  "uk-UA" = "🇺🇦",
 }
 
 export enum LocaleNames {
   "pl-PL" = "Polski",
   "en-US" = "English",
-  "uk-UA" = "Ukraiński"
+  "uk-UA" = "Ukraiński",
 }
 
-export type Locale = LocaleDefinitions.PL | LocaleDefinitions.US | LocaleDefinitions.UA
+export type Locale =
+  | LocaleDefinitions.PL
+  | LocaleDefinitions.US
+  | LocaleDefinitions.UA
 
-export const locales = [LocaleDefinitions.US, LocaleDefinitions.PL, LocaleDefinitions.UA]
+export const locales = [
+  LocaleDefinitions.US,
+  LocaleDefinitions.PL,
+  LocaleDefinitions.UA,
+]
 
 export enum RouteDefinitions {
   Page1 = "/page-1",
@@ -35,6 +42,9 @@ export type Routes =
   | RouteDefinitions.Page3
   | RouteDefinitions.PageCharityList
 
-export const getRouteNameForLocale = (route: Routes, locale: Locale = LocaleDefinitions.US) => {
+export const getRouteNameForLocale = (
+  route: Routes,
+  locale: Locale = LocaleDefinitions.US
+) => {
   return translations[locale][route]
 }
