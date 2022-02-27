@@ -7,6 +7,9 @@ const axiosInstance = axios.create({
 const endpoints = {
   mainTest: "/Cc7q5barUbUEjlCE/", //  test url sheets api
   demoMain: "/d9YLBhNzIAXeH9tJ/", // Demo main
+  prod: {
+    operations: "JlnuK6D6SCSElO6D",
+  },
 }
 
 export interface CharityDTO {
@@ -22,7 +25,7 @@ export interface CharityDTO {
 }
 
 export async function charityDataProvider(): Promise<CharityDTO[]> {
-  const res = await axiosInstance.get(endpoints.demoMain)
+  const res = await axiosInstance.get(endpoints.prod.operations)
   return res.data.data
 }
 

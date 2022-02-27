@@ -15,6 +15,18 @@ interface CharityTableProps {
   charityDataDTO: CharityDTO[]
 }
 
+const TableHederRow = () => (
+  <Tr>
+    <Th>Name</Th>
+    <Th>Website</Th>
+    <Th isNumeric>phoneNumer</Th>
+    <Th isNumeric>email</Th>
+    <Th>Help Kind</Th>
+    <Th>Area Covered</Th>
+    <Th>Info</Th>
+  </Tr>
+)
+
 export const CharityDataTable = ({ charityDataDTO }: CharityTableProps) => {
   const cds = new CharityDataStore(charityDataDTO)
   const pub = cds.publicCharityData
@@ -23,27 +35,25 @@ export const CharityDataTable = ({ charityDataDTO }: CharityTableProps) => {
     <Table variant="simple">
       {/* <TableCaption>Charity List</TableCaption> */}
       <Thead>
-        <Tr>
-          <Th>Name</Th>
-          <Th>URL</Th>
-          <Th isNumeric>phoneNumer</Th>
-        </Tr>
+        <TableHederRow />
       </Thead>
       <Tbody>
         {pub.map((charity, idx) => (
           <Tr key={idx}>
             <Td>{charity.fullName}</Td>
-            <Td>millimetres (mm)</Td>
-            <Td isNumeric>25.4</Td>
+            <Td>{charity.url ? <a href={charity.url}>link</a> : null} </Td>
+            <Td isNumeric>
+              {charity.phoneNumber ? charity.phoneNumber : null}
+            </Td>
+            <Td isNumeric>{charity.email ? charity.email : null}</Td>
+            <Td>{charity.helpKind}</Td>
+            <Td>{charity.areaCovered}</Td>
+            <Td>{charity.info}</Td>
           </Tr>
         ))}
       </Tbody>
       <Tfoot>
-        <Tr>
-          <Th>Name</Th>
-          <Th>URL</Th>
-          <Th isNumeric>phoneNumer</Th>
-        </Tr>
+        <TableHederRow />
       </Tfoot>
     </Table>
   )
