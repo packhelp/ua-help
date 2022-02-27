@@ -1,6 +1,6 @@
 //sdfsd
 import { makeRoot } from "iti"
-import { charityDataProvider, CharityData } from "./charity-data"
+import { charityDataProvider, CharityDataStore } from "./charity-data"
 
 export function getRootContainer() {
   return makeRoot()
@@ -8,7 +8,8 @@ export function getRootContainer() {
       charityDataDTO: async () => await charityDataProvider(),
     })
     .add((ctx) => ({
-      charityData: async () => new CharityData(await ctx.charityDataDTO),
+      charityDataStore: async () =>
+        new CharityDataStore(await ctx.charityDataDTO),
     }))
 }
 export type RootContainer = ReturnType<typeof getRootContainer>

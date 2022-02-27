@@ -26,7 +26,7 @@ export async function charityDataProvider(): Promise<CharityDTO[]> {
   return res.data.data
 }
 
-export class CharityData {
+export class CharityDataStore {
   constructor(private readonly _charityData: CharityDTO[]) {}
 
   get publicCharityData() {

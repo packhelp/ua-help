@@ -9,12 +9,14 @@ import {
   Td,
   TableCaption,
 } from "@chakra-ui/react"
-import { useContainer } from "../services/_continer.hooks"
+import { CharityDataStore } from "../services/charity-data"
 
-export const CharityDataTable = () => {
-  const [charitData] = useContainer().charityData
-  if (!charitData) return null
-  const pub = charitData.publicCharityData
+interface CharityTableProps {
+  charityData: CharityDataStore
+}
+
+export const CharityDataTable = ({ charityData }: CharityTableProps) => {
+  const pub = charityData.publicCharityData
 
   return (
     <Table variant="simple">

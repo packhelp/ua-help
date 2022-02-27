@@ -4,8 +4,23 @@ import Link from "next/link"
 import Image from "next/image"
 import styles from "../styles/Home.module.css"
 import { CharityDataTable } from "../src/components/componets"
+import { getRootContainer } from "../src/services/_root-container"
+import { CharityDataStore } from "../src/services/charity-data"
 
-const CharityList: NextPage = () => {
+export const getStaticProps = async (context) => {
+  const root = getRootContainer()
+  const charityData = await root.containers.charityDataStore
+  return {
+    props: {
+      charityData,
+    },
+  }
+}
+interface ChrityPageProps {
+  charityData: CharityDataStore
+}
+
+const CharityList: NextPage<ChrityPageProps> = ({ charityData }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -15,7 +30,7 @@ const CharityList: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <CharityDataTable />
+        <CharityDataTable charityData={charityData} />
       </main>
 
       <footer className={styles.footer}>footer</footer>
