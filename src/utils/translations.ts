@@ -10,8 +10,8 @@ export const translations: Translation = {
     "/initiatives": "Initiatives",
     "/information/df245e9b8f824a93b58f30730034a5c7": "Information",
     "main-page": {
-      "title-1": "List of initiatives",
-      "title-2": "helping Ukraine",
+      "title-1": "List of initiatives ",
+      "title-2": "helping Ukraine 💙",
       description:
         "A wave of help caused many initiatives doing the same thing, not knowing about each other. We connect them together to channel our efforts the best way possible.",
       "i-need-help-button": "I need help",
