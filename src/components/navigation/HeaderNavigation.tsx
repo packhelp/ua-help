@@ -8,7 +8,7 @@ import {
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react"
-import { ChevronDownIcon, ChevronUpIcon, CloseIcon, HamburgerIcon } from "@chakra-ui/icons"
+import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons"
 import { NavigationLinks } from "./NavigationLinks"
 import { RegionSwitcher } from "./RegionSwitcher"
 
