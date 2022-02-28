@@ -13,7 +13,7 @@ const endpoints = {
   },
 }
 
-export interface CharityDTO {
+export interface InitiativesDTO {
   public: boolean
   date: number | string
   fullName: string
@@ -26,7 +26,7 @@ export interface CharityDTO {
   image?: string
 }
 
-export async function charityDataProvider(): Promise<CharityDTO[]> {
+export async function initiativesDataProvider(): Promise<InitiativesDTO[]> {
   const res = await axiosInstance.get(endpoints.prod.operations)
   const resData = res.data.data
   for (const charity of resData) {
@@ -41,10 +41,10 @@ export async function charityDataProvider(): Promise<CharityDTO[]> {
   return resData
 }
 
-export class CharityDataStore {
-  constructor(private readonly _charityData: CharityDTO[]) {}
+export class InitiativesDataStore {
+  constructor(private readonly _initiativesData: InitiativesDTO[]) {}
 
   get publicCharityData() {
-    return this._charityData.filter((el) => el.public === true)
+    return this._initiativesData.filter((el) => el.public === true)
   }
 }

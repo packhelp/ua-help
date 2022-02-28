@@ -1,33 +1,24 @@
 import React, { useState } from "react"
 import {
-  Table,
-  Thead,
-  Tbody,
-  Tfoot,
   Tr,
   Th,
-  Td,
   Tag,
   TagLabel,
-  TagCloseButton,
-  TableCaption,
   HStack,
   Flex,
   Box,
-  Center,
-  Image,
   Badge,
   Text,
   SimpleGrid,
   Link,
 } from "@chakra-ui/react"
-import { CharityDataStore, CharityDTO } from "../services/charity-data"
 
+import { InitiativesDataStore, InitiativesDTO } from "../services/charity-data"
 import { useRouter } from "next/router"
 import { Locales, translations } from "../../src/utils/translations"
 
-interface CharityTableProps {
-  charityDataDTO: CharityDTO[]
+interface InitiativesViewProps {
+  initiativesDataDTO: InitiativesDTO[]
 }
 
 const helpCategory = [
@@ -68,20 +59,6 @@ const helpCategory = [
     name: "Aggregators",
   },
 ]
-
-const TableHeaderRow = ({ locale }) => {
-  return (
-    <Tr>
-      <Th>{translations[locale]["generic"]["name"]}</Th>
-      <Th>{translations[locale]["generic"]["website"]}</Th>
-      <Th isNumeric>{translations[locale]["generic"]["phone"]}</Th>
-      <Th isNumeric>{translations[locale]["generic"]["email"]}</Th>
-      <Th>{translations[locale]["generic"]["help-kind"]}</Th>
-      <Th>{translations[locale]["generic"]["area-covered"]}</Th>
-      <Th>{translations[locale]["generic"]["info"]}</Th>
-    </Tr>
-  )
-}
 
 type FiltersProps = {
   locale: Locales
@@ -125,8 +102,10 @@ const Filters = (props: FiltersProps) => {
   )
 }
 
-export const CharityDataTable = ({ charityDataDTO }: CharityTableProps) => {
-  const cds = new CharityDataStore(charityDataDTO)
+export const InitiativesView = ({
+  initiativesDataDTO,
+}: InitiativesViewProps) => {
+  const cds = new InitiativesDataStore(initiativesDataDTO)
   const pub = cds.publicCharityData
 
   const { locale } = useRouter()

@@ -11,6 +11,9 @@ import {
 import { useRouter } from "next/router"
 import { translations, Locales } from "../src/utils/translations"
 import { config } from "../src/config"
+import { RouteDefinitions } from "../src/utils/routes"
+import { NavigationLink } from "../src/components/NavigationLink"
+import React from "react"
 
 const Home: NextPage = () => {
   const { locale } = useRouter()
@@ -42,15 +45,17 @@ const Home: NextPage = () => {
           {translations[finalLocale]["main-page"]["description"]}
         </Text>
         <Stack spacing={6} direction={"row"}>
-          <Button
-            rounded={"full"}
-            px={6}
-            colorScheme={"orange"}
-            bg={"green.400"}
-            _hover={{ bg: "green.500" }}
-          >
-            {translations[finalLocale]["main-page"]["i-need-help-button"]}
-          </Button>
+          <Link href={RouteDefinitions.PageCharityList}>
+            <Button
+              rounded={"full"}
+              px={6}
+              colorScheme={"orange"}
+              bg={"green.400"}
+              _hover={{ bg: "green.500" }}
+            >
+              {translations[finalLocale]["main-page"]["list-of-initiatives-button"]}
+            </Button>
+          </Link>
           <Link href={config.addNewEntityFormLink} target="_blank">
             <Button
               rounded={"full"}
@@ -59,7 +64,7 @@ const Home: NextPage = () => {
               bg={"blue.400"}
               _hover={{ bg: "blue.500" }}
             >
-              {translations[finalLocale]["main-page"]["i-wanna-help-button"]}
+              {translations[finalLocale]["main-page"]["add-initiative-button"]}
             </Button>
           </Link>
         </Stack>
