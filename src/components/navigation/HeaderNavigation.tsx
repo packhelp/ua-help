@@ -8,9 +8,15 @@ import {
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react"
-import { ChevronDownIcon, ChevronUpIcon, CloseIcon, HamburgerIcon } from "@chakra-ui/icons"
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  CloseIcon,
+  HamburgerIcon,
+} from "@chakra-ui/icons"
 import { NavigationLinks } from "./NavigationLinks"
 import { RegionSwitcher } from "./RegionSwitcher"
+import { Logo } from "./Logo"
 
 export const HeaderNavigation = () => {
   const bg = useColorModeValue("white", "blue.500")
@@ -34,11 +40,13 @@ export const HeaderNavigation = () => {
 const Desktop = () => {
   return (
     <Flex
-      justifyContent={"space-between"}
+      justifyContent={"strech"}
       alignContent={"center"}
+      alignItems={"center"}
       display={{ base: "none", sm: "none", md: "flex" }}
     >
-      <div>
+      <Logo />
+      <div style={{ flex: 1, margin: "0 16px" }}>
         <NavigationLinks />
       </div>
       <RegionSwitcher />
@@ -71,6 +79,7 @@ const Mobile = () => {
           icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
           onClick={isOpen ? onClose : onOpen}
         />
+        <Logo />
         <RegionSwitcher />
       </Flex>
       {isOpen && (
