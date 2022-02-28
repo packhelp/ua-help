@@ -6,8 +6,6 @@ export const NavigationLinks = () => {
   return (
     <>
       <NavigationLink route={RouteDefinitions.PageCharityList} />
-      <NavigationLink route={RouteDefinitions.Page1} />
-      <NavigationLink route={RouteDefinitions.Page2} />
       <NavigationLink route={RouteDefinitions.Page3} />
     </>
   )

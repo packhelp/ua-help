@@ -1,4 +1,4 @@
-import React, { ReactNode, useContext, useMemo, useState, useEffect } from "react"
+import React, { useState } from "react"
 import {
   Table,
   Thead,
@@ -17,7 +17,6 @@ import {
 import { CharityDataStore, CharityDTO } from "../services/charity-data"
 import { useRouter } from "next/router"
 import { Locales, translations } from "../../src/utils/translations"
-import { TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons'
 
 interface CharityTableProps {
   charityDataDTO: CharityDTO[]
