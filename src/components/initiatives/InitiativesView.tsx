@@ -1,16 +1,11 @@
 import React, { useState } from "react"
-import {
-  Flex,
-  Box,
-  Badge,
-  Text,
-  SimpleGrid,
-  Link,
-} from "@chakra-ui/react"
 
-import { InitiativesDataStore, InitiativesDTO } from "../../services/charity-data"
+import {
+  InitiativesDataStore,
+  InitiativesDTO,
+} from "../../services/charity-data"
 import { useRouter } from "next/router"
-import { Locales, translations } from "../../utils/translations"
+import { Locales } from "../../utils/translations"
 import { InitiativesListFilters } from "./InitiativesListFilters"
 import { InitiativesList } from "./InitiativesList"
 

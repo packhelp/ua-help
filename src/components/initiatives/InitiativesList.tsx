@@ -1,24 +1,17 @@
 import React, { useState, useEffect } from "react"
-import {
-    Flex,
-    Box,
-    Badge,
-    Text,
-    SimpleGrid,
-    Link,
-} from "@chakra-ui/react"
+import { Box, Badge, Text, SimpleGrid, Link, Flex } from "@chakra-ui/react"
 import { InitiativesDTO } from "../../services/charity-data"
 import { Locales, translations } from "../../../src/utils/translations"
-import { ExternalLinkIcon } from "@chakra-ui/icons"
+import _remove from "lodash/remove"
 
 type InitiativesListTileProps = {
-    data: InitiativesDTO[]
+  data: InitiativesDTO[]
     locale: Locales
 }
 
 export const InitiativesList = (props: InitiativesListTileProps) => {
-    const { data, locale } = props
-    const [isNavigatorAvailable, setNavigatorAvailable] = useState(false);
+  const { data, locale } = props
+  const [isNavigatorAvailable, setNavigatorAvailable] = useState(false);
     useEffect(() => {
         if (navigator) {
             setNavigatorAvailable(true);
@@ -103,7 +96,11 @@ export const InitiativesList = (props: InitiativesListTileProps) => {
                                 <>
                                     <b>
                                         {translations[locale]["generic"]["phone"]}
-                                    </b> <span>{charity.phoneNumber}</span>
+                                    </b> <Link
+                      href={`tel:${charity.phoneNumber.replace(/\s+/g, "")}`}
+                    >
+                      {charity.phoneNumber}
+                    </Link>
                                 </>
                             )}
                             {charity.email && (
@@ -120,7 +117,7 @@ export const InitiativesList = (props: InitiativesListTileProps) => {
                         {charity.info}
                     </Text>
                 </Box>
-            ))}
-        </SimpleGrid>
-    )
+      ))}
+    </SimpleGrid>
+  )
 }
