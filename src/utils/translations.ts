@@ -43,6 +43,8 @@ export const translations: Translation = {
       report: "Report",
       "entity-information": "Entity information",
       "filter-by-type-of-help": "Filter by type of help",
+      "share-link": "share link",
+      "go-to-page": "go to page",
     },
   },
   "pl-PL": {
@@ -82,6 +84,8 @@ export const translations: Translation = {
       report: "Zgłoś naruszenie",
       "entity-information": "Informacje o bycie",
       "filter-by-type-of-help": "Wyfiltruj po typie pomocy",
+      "share-link": "Udostępnij link",
+      "go-to-page": "Przejdź",
     },
   },
   "uk-UA": {
@@ -120,6 +124,8 @@ export const translations: Translation = {
       report: "<missing_translation>",
       "entity-information": "<missing_translation>",
       "filter-by-type-of-help": "<missing_translation>",
+      "share-link": "<missing_translation>",
+      "go-to-page": "<missing_translation>",
     },
   },
 }
