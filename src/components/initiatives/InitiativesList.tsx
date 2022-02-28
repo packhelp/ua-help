@@ -11,15 +11,12 @@ type InitiativesListTileProps = {
 
 export const InitiativesList = (props: InitiativesListTileProps) => {
   const { data, locale } = props
-  const [isNavigatorAvailable, setNavigatorAvailable] = useState(false)
-  useEffect(() => {
-    if (navigator) {
-      setNavigatorAvailable(true)
-    }
-  }, [])
+
+  // @ts-ignore
+  const isMobile = navigator.userAgentData.mobile
 
   const onShareClick = async (url: string) => {
-    if (!isNavigatorAvailable) {
+    if (!isMobile) {
       return
     }
 
@@ -84,7 +81,7 @@ export const InitiativesList = (props: InitiativesListTileProps) => {
                     <Link href={charity.url}>
                       {translations[locale]["generic"]["go-to-page"]}
                     </Link>
-                    {isNavigatorAvailable && (
+                    {isMobile && (
                       <Flex
                         cursor="pointer"
                         alignItems="center"
