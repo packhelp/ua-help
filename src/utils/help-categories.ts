@@ -3,7 +3,7 @@ import { StringIterator } from "lodash"
 export const helpCategory: {
   id: string
   name: string
-  color: StringIterator
+  color: string
 }[] = [
   {
     id: "charity",
@@ -14,7 +14,6 @@ export const helpCategory: {
     id: "accommodation",
     name: "Accommodation",
     color: "#8eb3d6",
-    faIcon: "",
   },
   {
     id: "information",
