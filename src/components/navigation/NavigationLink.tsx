@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "next/link"
 import { Button } from "@chakra-ui/react"
-import { getRouteNameForLocale, Locale, Routes } from "../utils/routes"
+import { getRouteNameForLocale, Locale, Routes } from "../../utils/routes"
 import { useRouter } from "next/router"
 
 type NavigationLinkProps = {

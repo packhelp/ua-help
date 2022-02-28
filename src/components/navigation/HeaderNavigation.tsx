@@ -8,7 +8,7 @@ import {
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react"
-import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons"
+import { ChevronDownIcon, ChevronUpIcon, CloseIcon, HamburgerIcon } from "@chakra-ui/icons"
 import { NavigationLinks } from "./NavigationLinks"
 import { RegionSwitcher } from "./RegionSwitcher"
 
@@ -65,7 +65,7 @@ const Mobile = () => {
           fontSize="20px"
           color={useColorModeValue("gray.800", "inherit")}
           variant="ghost"
-          icon={isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
           onClick={isOpen ? onClose : onOpen}
         />
         <RegionSwitcher />

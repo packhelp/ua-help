@@ -1,6 +1,6 @@
 import React from "react"
 import { useRouter } from "next/router"
-import { Locale, LocaleFlags, LocaleNames, locales } from "../utils/routes"
+import { Locale, LocaleFlags, LocaleNames, locales } from "../../utils/routes"
 import Link from "next/link"
 import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/menu"
 

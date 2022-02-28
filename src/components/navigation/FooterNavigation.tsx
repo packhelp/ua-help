@@ -1,6 +1,6 @@
 import React from "react"
 import { chakra, Flex, useColorModeValue } from "@chakra-ui/react"
-import { LocaleFlags, LocaleDefinitions } from "../utils/routes"
+import { LocaleFlags, LocaleDefinitions } from "../../utils/routes"
 
 export const FooterNavigation = () => {
   const bg = useColorModeValue("white", "blue.500")

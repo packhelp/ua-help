@@ -3,7 +3,7 @@ import Head from "next/head"
 import Link from "next/link"
 import Image from "next/image"
 import styles from "../styles/Home.module.css"
-import { InitiativesView } from "../src/components/componets"
+import { InitiativesView } from "../src/components/initiatives/InitiativesView"
 import { getRootContainer } from "../src/services/_root-container"
 import { InitiativesDataStore, InitiativesDTO } from "../src/services/charity-data"
 

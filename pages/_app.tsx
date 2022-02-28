@@ -1,8 +1,8 @@
 import "../styles/globals.css"
 import type { AppProps } from "next/app"
 import { ChakraProvider } from "@chakra-ui/react"
-import { HeaderNavigation } from "../src/components/HeaderNavigation"
-import { FooterNavigation } from "../src/components/FooterNavigation"
+import { HeaderNavigation } from "../src/components/navigation/HeaderNavigation"
+import { FooterNavigation } from "../src/components/navigation/FooterNavigation"
 
 // core styles shared by all of react-notion-x (required)
 import "react-notion-x/src/styles.css"

@@ -19,7 +19,7 @@ import {
   Button,
   Divider,
 } from "@chakra-ui/react"
-import { config } from "../../src/config"
+import { config } from "../../src/utils/config"
 import { Locales, translations } from "../../src/utils/translations"
 import { useRouter } from "next/router"
 import { Tags } from "../../src/components/Tags"
