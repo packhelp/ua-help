@@ -40,10 +40,7 @@ export const InitiativesView = ({
         filteredBy={filteredBy}
         setFilteredBy={setFilteredBy}
       />
-      <InitiativesList
-          data={filtered}
-          locale={finalLocale}
-      />
+      <InitiativesList data={filtered} locale={finalLocale} />
     </>
   )
 }
