@@ -7,9 +7,9 @@ export enum LocaleDefinitions {
 }
 
 export enum LocaleFlags {
-  "pl-PL" = "🇵🇱",
-  "en-US" = "🇺🇸",
-  "uk-UA" = "🇺🇦",
+  "pl-PL" = "svg/poland.svg",
+  "en-US" = "svg/united-kingdom.svg",
+  "uk-UA" = "svg/ukraine.svg",
 }
 
 export enum LocaleNames {

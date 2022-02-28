@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import { Locale, LocaleFlags, LocaleNames, locales } from "../utils/routes"
 import Link from "next/link"
 import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/menu"
+import { Flex, Image } from "@chakra-ui/react"
 
 export const RegionSwitcher = () => {
   const { asPath, locale } = useRouter()
@@ -10,22 +11,23 @@ export const RegionSwitcher = () => {
   const currentLocale = locale as Locale
 
   return (
-    <div>
+    <Flex alignItems={"center"}>
       <Menu>
-        <MenuButton>{LocaleFlags[currentLocale]}</MenuButton>
-
-        <MenuList>
+        <MenuButton>
+          <Image src={LocaleFlags[currentLocale]} alt="" width={22} />
+        </MenuButton>
+        <MenuList  p={0} minW="0" w={'100px'}>
           {locales.map((l, i) => {
             return (
               <Link key={l} href={asPath} locale={l}>
-                <MenuItem>
-                  {LocaleFlags[l]} {LocaleNames[l]}
+                <MenuItem justifyContent={"center"}>
+                  <Image src= {LocaleFlags[l]} alt={LocaleNames[l]} width={22} />
                 </MenuItem>
               </Link>
             )
           })}
         </MenuList>
       </Menu>
-    </div>
+    </Flex>
   )
 }
