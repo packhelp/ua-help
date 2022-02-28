@@ -22,6 +22,8 @@ export const HeaderNavigation = () => {
       py={4}
       shadow="md"
       mb={10}
+      position="sticky"
+      top={0}
     >
       <Desktop />
       <Mobile />
