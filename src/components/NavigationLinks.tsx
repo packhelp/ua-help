@@ -5,8 +5,8 @@ import { NavigationLink } from "./NavigationLink"
 export const NavigationLinks = () => {
   return (
     <>
-      <NavigationLink route={RouteDefinitions.PageCharityList} />
-      <NavigationLink route={RouteDefinitions.Page3} />
+      <NavigationLink route={RouteDefinitions.PageInitiatives} />
+      <NavigationLink route={RouteDefinitions.PageInformation} />
     </>
   )
 }

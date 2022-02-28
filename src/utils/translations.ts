@@ -7,9 +7,7 @@ type Translation = {
 
 export const translations: Translation = {
   "en-US": {
-    "/charity-list": "Initiatives",
-    "/page-1": "Page 1",
-    "/page-2": "Page 2",
+    "/initiatives": "Initiatives",
     "/information/df245e9b8f824a93b58f30730034a5c7": "Information",
     "main-page": {
       "title-1": "Helping Ukraine",
@@ -46,9 +44,7 @@ export const translations: Translation = {
     },
   },
   "pl-PL": {
-    "/charity-list": "Inicjatywy",
-    "/page-1": "Strona 1",
-    "/page-2": "Strona 2",
+    "/initiatives": "Inicjatywy",
     "/information/df245e9b8f824a93b58f30730034a5c7": "Informacje",
     "main-page": {
       "title-1": "Pomoc Ukrainie",
@@ -85,9 +81,7 @@ export const translations: Translation = {
     },
   },
   "uk-UA": {
-    "/charity-list": "Inicjatywy",
-    "/page-1": "Strona 1",
-    "/page-2": "Strona 2",
+    "/initiatives": "Inicjatywy",
     "/information/df245e9b8f824a93b58f30730034a5c7": "Information",
     "main-page": {
       "title-1": "Pomoc Ukrainie",

@@ -14,12 +14,12 @@ import {
   HStack,
   Flex,
 } from "@chakra-ui/react"
-import { CharityDataStore, CharityDTO } from "../services/charity-data"
+import { InitiativesDataStore, InitiativesDTO } from "../services/charity-data"
 import { useRouter } from "next/router"
 import { Locales, translations } from "../../src/utils/translations"
 
-interface CharityTableProps {
-  charityDataDTO: CharityDTO[]
+interface InitiativesViewProps {
+  initiativesDataDTO: InitiativesDTO[]
 }
 
 const helpCategory = [
@@ -117,8 +117,8 @@ const Filters = (props: FiltersProps) => {
   )
 }
 
-export const CharityDataTable = ({ charityDataDTO }: CharityTableProps) => {
-  const cds = new CharityDataStore(charityDataDTO)
+export const InitiativesView = ({ initiativesDataDTO }: InitiativesViewProps) => {
+  const cds = new InitiativesDataStore(initiativesDataDTO)
   const pub = cds.publicCharityData
 
   const { locale } = useRouter()
