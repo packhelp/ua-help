@@ -12,12 +12,14 @@ export const translations: Translation = {
     "/page-2": "Page 2",
     "/information/df245e9b8f824a93b58f30730034a5c7": "Information",
     "main-page": {
-      "title-1": "Helping Ukraine",
-      "title-2": "made easy",
+      "title-1": "List of initiatives",
+      "title-2": "helping Ukraine",
       description:
-        "We are here to help connect people in need with people that can provide help. Need lawyer, job, transport, medical aid, or something else? We got you!",
+        "A wave of help caused many initiatives doing the same thing, not knowing about each other. We connect them together to channel our efforts the best way possible.",
       "i-need-help-button": "I need help",
       "i-wanna-help-button": "I wanna help",
+      "add-initiative-button": "Add initiative",
+      "list-of-initiatives-button": "List of initiatives",
     },
     "details-page": {
       "comment-button": "Comment",
@@ -51,12 +53,14 @@ export const translations: Translation = {
     "/page-2": "Strona 2",
     "/information/df245e9b8f824a93b58f30730034a5c7": "Informacje",
     "main-page": {
-      "title-1": "Pomoc Ukrainie",
-      "title-2": "w łatwy sposób",
+      "title-1": "Baza inicjatyw",
+      "title-2": "pomagających Ukrainie",
       description:
-        "Jesteśmy po to by łączyć osoby potrzebujące z osobami, które pomoc chcą dostarczać. Potrzebujesz prawnika, pracę, pransport, pomoc medyczną, lub coś innego? Na pewno znajdziesz u nas pomoc!",
+        "Fala pomocy spowodowała wysyp inicjatyw technologicznych i organizacyjnych. Niestety wiele inicjatyw się powiela i nie wie o sobie nawzajem. Łączymy te inicjatywy i ułatwiamy kontakt pomiędzy organizatorami.",
       "i-need-help-button": "Potrzebuję pomocy",
       "i-wanna-help-button": "Chcę pomóc",
+      "add-initiative-button": "Dodaj inicjatywę",
+      "list-of-initiatives-button": "Lista inicjatyw",
     },
     "details-page": {
       "comment-button": "Skomentuj",
@@ -95,6 +99,8 @@ export const translations: Translation = {
       description: "<missing_translation>",
       "i-need-help-button": "<missing_translation>",
       "i-wanna-help-button": "<missing_translation>",
+      "add-initiative-button": "<missing_translation>",
+      "list-of-initiatives-button": "<missing_translation>",
     },
     "details-page": {
       "comment-button": "<missing_translation>",
