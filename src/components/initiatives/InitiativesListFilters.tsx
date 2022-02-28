@@ -1,45 +1,7 @@
 import React from "react"
 import { Locales, translations } from "../../../src/utils/translations"
 import { Tag, TagLabel, HStack, Flex } from "@chakra-ui/react"
-
-const helpCategory = [
-  {
-    id: "charity",
-    name: "Charity",
-  },
-  {
-    id: "accommodation",
-    name: "Accommodation",
-  },
-  {
-    id: "information",
-    name: "Information",
-  },
-  {
-    id: "legal",
-    name: "Legal",
-  },
-  {
-    id: "clothes",
-    name: "Clothes",
-  },
-  {
-    id: "work",
-    name: "Work",
-  },
-  {
-    id: "transport",
-    name: "Transportation",
-  },
-  {
-    id: "financial",
-    name: "Financial",
-  },
-  {
-    id: "aggregator",
-    name: "Aggregators",
-  },
-]
+import { helpCategory } from "../../utils/help-categories"
 
 type FiltersProps = {
   locale: Locales

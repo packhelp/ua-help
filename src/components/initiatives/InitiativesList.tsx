@@ -3,6 +3,7 @@ import { Box, Badge, Text, SimpleGrid, Link, Flex } from "@chakra-ui/react"
 import { InitiativesDTO } from "../../services/charity-data"
 import { Locales, translations } from "../../../src/utils/translations"
 import _remove from "lodash/remove"
+import { InitiativeTypeBadge } from "./InitiativeTypeBadge"
 
 type InitiativesListTileProps = {
   data: InitiativesDTO[]
@@ -46,15 +47,7 @@ export const InitiativesList = (props: InitiativesListTileProps) => {
           />
           <div style={{ lineHeight: "1em", marginTop: "0.5em" }}>
             {charity.helpKind.split(",").map((badge, idx) => (
-              <Badge
-                fontSize="0.5em"
-                mr={1}
-                mt={1}
-                key={idx}
-                colorScheme="blue"
-              >
-                {badge}
-              </Badge>
+              <InitiativeTypeBadge key={idx} badgeName={badge} />
             ))}
           </div>
           <Text
