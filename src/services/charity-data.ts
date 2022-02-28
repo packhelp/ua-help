@@ -1,5 +1,6 @@
 //sdfsd
 import axios, { AxiosRequestConfig, AxiosInstance } from "axios"
+import { fetch as fetchOG } from "fetch-opengraph"
 const axiosInstance = axios.create({
   baseURL: "https://api.apispreadsheets.com/data",
 })
@@ -22,11 +23,22 @@ export interface CharityDTO {
   helpKind: string
   info: string
   areaCovered: string
+  image?: string
 }
 
 export async function charityDataProvider(): Promise<CharityDTO[]> {
   const res = await axiosInstance.get(endpoints.prod.operations)
-  return res.data.data
+  const resData = res.data.data
+  for (const charity of resData) {
+    if (!charity.url) {
+      continue
+    }
+    try {
+      const data = await fetchOG(charity.url)
+      charity["image"] = data["image"] || data["og:image"] || null
+    } catch {}
+  }
+  return resData
 }
 
 export class CharityDataStore {
