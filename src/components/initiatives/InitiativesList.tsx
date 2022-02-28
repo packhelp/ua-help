@@ -1,6 +1,7 @@
 import React from "react"
 import { Box, Badge, Text, SimpleGrid, Link } from "@chakra-ui/react"
 import { InitiativesDTO } from "../../services/charity-data"
+import _remove from "lodash/remove"
 
 type InitiativesListTileProps = {
   data: InitiativesDTO[]
@@ -65,7 +66,12 @@ export const InitiativesList = (props: InitiativesListTileProps) => {
                 )}
                 {charity.phoneNumber && (
                   <>
-                    <b>Phone</b> <span>{charity.phoneNumber}</span>
+                    <b>Phone</b>
+                    <Link
+                      href={`tel:${charity.phoneNumber.replace(/\s+/g, "")}`}
+                    >
+                      {charity.phoneNumber}
+                    </Link>
                   </>
                 )}
                 {charity.email && (
