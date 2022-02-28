@@ -33,6 +33,7 @@ const Desktop = () => {
   return (
     <Flex
       justifyContent={"space-between"}
+      alignContent={"center"}
       display={{ base: "none", sm: "none", md: "flex" }}
     >
       <div>
