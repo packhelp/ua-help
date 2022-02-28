@@ -1,18 +1,9 @@
 import type { NextPage } from "next"
-import {
-  Button,
-  Container,
-  Flex,
-  Heading,
-  Link,
-  Stack,
-  Text,
-} from "@chakra-ui/react"
+import { Button, Container, Heading, Link, Stack, Text } from "@chakra-ui/react"
 import { useRouter } from "next/router"
 import { translations, Locales } from "../src/utils/translations"
 import { config } from "../src/utils/config"
 import { RouteDefinitions } from "../src/utils/routes"
-import { NavigationLink } from "../src/components/navigation/NavigationLink"
 import React from "react"
 
 const Home: NextPage = () => {

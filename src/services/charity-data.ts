@@ -1,5 +1,5 @@
 //sdfsd
-import axios, { AxiosRequestConfig, AxiosInstance } from "axios"
+import axios from "axios"
 import { fetch as fetchOG } from "fetch-opengraph"
 const axiosInstance = axios.create({
   baseURL: "https://api.apispreadsheets.com/data",

@@ -50,7 +50,7 @@ export async function getStaticPaths() {
     }
   )
 
-  const paths = Object.keys(pages).map((pageId) => `/${pageId}`)
+  const paths = Object.keys(pages).map((pageId) => `/information/${pageId}`)
 
   return {
     paths,
@@ -64,7 +64,6 @@ export default function NotionPage({ recordMap }) {
   }
 
   const title = getPageTitle(recordMap)
-  console.log(title, recordMap)
 
   return (
     <>
