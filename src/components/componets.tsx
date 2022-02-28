@@ -1,19 +1,18 @@
 import React, { useState } from "react"
 import {
-  Table,
-  Thead,
-  Tbody,
-  Tfoot,
   Tr,
   Th,
-  Td,
   Tag,
   TagLabel,
-  TagCloseButton,
-  TableCaption,
   HStack,
   Flex,
+  Box,
+  Badge,
+  Text,
+  SimpleGrid,
+  Link,
 } from "@chakra-ui/react"
+
 import { InitiativesDataStore, InitiativesDTO } from "../services/charity-data"
 import { useRouter } from "next/router"
 import { Locales, translations } from "../../src/utils/translations"
@@ -61,20 +60,6 @@ const helpCategory = [
   },
 ]
 
-const TableHeaderRow = ({ locale }) => {
-  return (
-    <Tr>
-      <Th>{translations[locale]["generic"]["name"]}</Th>
-      <Th>{translations[locale]["generic"]["website"]}</Th>
-      <Th isNumeric>{translations[locale]["generic"]["phone"]}</Th>
-      <Th isNumeric>{translations[locale]["generic"]["email"]}</Th>
-      <Th>{translations[locale]["generic"]["help-kind"]}</Th>
-      <Th>{translations[locale]["generic"]["area-covered"]}</Th>
-      <Th>{translations[locale]["generic"]["info"]}</Th>
-    </Tr>
-  )
-}
-
 type FiltersProps = {
   locale: Locales
   filteredBy: string
@@ -117,7 +102,9 @@ const Filters = (props: FiltersProps) => {
   )
 }
 
-export const InitiativesView = ({ initiativesDataDTO }: InitiativesViewProps) => {
+export const InitiativesView = ({
+  initiativesDataDTO,
+}: InitiativesViewProps) => {
   const cds = new InitiativesDataStore(initiativesDataDTO)
   const pub = cds.publicCharityData
 
@@ -142,30 +129,80 @@ export const InitiativesView = ({ initiativesDataDTO }: InitiativesViewProps) =>
         filteredBy={filteredBy}
         setFilteredBy={setFilteredBy}
       />
-      <Table variant="simple">
-        {/* <TableCaption>Charity List</TableCaption> */}
-        <Thead>
-          <TableHeaderRow locale={finalLocale} />
-        </Thead>
-        <Tbody>
-          {filtered.map((charity, idx) => (
-            <Tr key={idx}>
-              <Td>{charity.fullName}</Td>
-              <Td>{charity.url ? <a href={charity.url}>link</a> : null} </Td>
-              <Td isNumeric>
-                {charity.phoneNumber ? charity.phoneNumber : null}
-              </Td>
-              <Td isNumeric>{charity.email ? charity.email : null}</Td>
-              <Td>{charity.helpKind}</Td>
-              <Td>{charity.areaCovered}</Td>
-              <Td>{charity.info}</Td>
-            </Tr>
-          ))}
-        </Tbody>
-        <Tfoot>
-          <TableHeaderRow locale={finalLocale} />
-        </Tfoot>
-      </Table>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 5 }} spacing="2em" mt={4}>
+        {filtered.map((charity, idx) => (
+          <>
+            <Box key={idx} p="5" maxW="320px" borderWidth="1px">
+              <Box
+                borderRadius={5}
+                height={156}
+                backgroundColor="gray.200"
+                // background={[
+                //   "linear-gradient(180deg, #3a75c4 50%, #f9dd16 50%)",
+                // ]} # ukrainian flag, but I'm not sure if it's right to use it as too many pages misses images and it might be overwhelming
+                backgroundImage={charity.image}
+                backgroundSize={["cover"]}
+                backgroundPosition={["center"]}
+              />
+              <div style={{ lineHeight: "1em", marginTop: "0.5em" }}>
+                {charity.helpKind.split(",").map((badge, idx) => (
+                  <Badge
+                    fontSize="0.5em"
+                    mr={1}
+                    mt={1}
+                    key={idx}
+                    colorScheme="blue"
+                  >
+                    {badge}
+                  </Badge>
+                ))}
+              </div>
+              <Text
+                mt={2}
+                fontSize="l"
+                fontWeight="semibold"
+                lineHeight="short"
+                textTransform="uppercase"
+              >
+                {charity.fullName}
+              </Text>
+              <Text mb={2} fontSize="sm" fontWeight="bold" color="blue.800">
+                {charity.areaCovered}
+              </Text>
+              <Text fontSize="xs">
+                <SimpleGrid
+                  columns={2}
+                  spacing="1em"
+                  mb={2}
+                  spacingY="4px"
+                  templateColumns="40px auto;"
+                >
+                  {charity.url && (
+                    <>
+                      <b>Link</b>
+                      <Link href={charity.url}>go to page</Link>
+                    </>
+                  )}
+                  {charity.phoneNumber && (
+                    <>
+                      <b>Phone</b> <span>{charity.phoneNumber}</span>
+                    </>
+                  )}
+                  {charity.email && (
+                    <>
+                      <b>E-mail</b>
+                      <Link href={`mailto:${charity.email}`}>
+                        {charity.email}
+                      </Link>
+                    </>
+                  )}
+                </SimpleGrid>
+                {charity.info}
+              </Text>
+            </Box>
+          </>
+        ))}
+      </SimpleGrid>
     </>
   )
 }
