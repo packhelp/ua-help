@@ -13,7 +13,7 @@ export const getStaticProps = async (context) => {
   let pageId = context.params.pageId as string
 
   if (!pageId) {
-    pageId = "df245e9b8f824a93b58f30730034a5c7"
+    pageId = "ade08590c3fc447a815ed413588e66f7"
   }
 
   const recordMap = await notion.getPage(pageId)
@@ -34,8 +34,8 @@ export async function getStaticPaths() {
     }
   }
 
-  const rootNotionPageId = "df245e9b8f824a93b58f30730034a5c7"
-  const rootNotionSpaceId = "fde5ac74-eea3-4527-8f00-4482710e1af3"
+  const rootNotionPageId = "ade08590c3fc447a815ed413588e66f7"
+  const rootNotionSpaceId = "20c97a03-bf32-44fb-a39c-0b6ba411449b"
 
   // This crawls all public pages starting from the given root page in order
   // for next.js to pre-generate all pages via static site generation (SSG).
@@ -69,7 +69,6 @@ export default function NotionPage({ recordMap }) {
   return (
     <>
       <Head>
-        <meta name="description" content="React Notion X demo renderer." />
         <title>{title}</title>
       </Head>
 
@@ -80,21 +79,7 @@ export default function NotionPage({ recordMap }) {
         customImages={true}
         rootDomain="localhost:9090" // used to detect root domain links and open this in the same tab
         components={{
-          image: ({
-            src,
-            alt,
-
-            height,
-            width,
-
-            className,
-            style,
-            loading,
-            decoding,
-
-            ref,
-            onLoad,
-          }) => (
+          image: ({ src, alt, height, width, className, style, ref }) => (
             <img
               className={className}
               style={style}

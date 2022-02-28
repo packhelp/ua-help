@@ -22,6 +22,8 @@ export const HeaderNavigation = () => {
       py={4}
       shadow="md"
       mb={10}
+      position="sticky"
+      top={0}
     >
       <Desktop />
       <Mobile />
@@ -33,6 +35,7 @@ const Desktop = () => {
   return (
     <Flex
       justifyContent={"space-between"}
+      alignContent={"center"}
       display={{ base: "none", sm: "none", md: "flex" }}
     >
       <div>

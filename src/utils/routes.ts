@@ -7,9 +7,9 @@ export enum LocaleDefinitions {
 }
 
 export enum LocaleFlags {
-  "pl-PL" = "🇵🇱",
-  "en-US" = "🇺🇸",
-  "uk-UA" = "🇺🇦",
+  "pl-PL" = "svg/poland.svg",
+  "en-US" = "svg/united-kingdom.svg",
+  "uk-UA" = "svg/ukraine.svg",
 }
 
 export enum LocaleNames {
@@ -30,7 +30,7 @@ export const locales = [
 ]
 
 export enum RouteDefinitions {
-  PageInformation = "/information/df245e9b8f824a93b58f30730034a5c7",
+  PageInformation = "/information/ade08590c3fc447a815ed413588e66f7",
   PageInitiatives = "/initiatives",
 }
 
