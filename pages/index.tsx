@@ -45,7 +45,7 @@ const Home: NextPage = () => {
           {translations[finalLocale]["main-page"]["description"]}
         </Text>
         <Stack spacing={6} direction={"row"}>
-          <Link href={RouteDefinitions.PageCharityList}>
+          <Link href={RouteDefinitions.PageInitiatives}>
             <Button
               rounded={"full"}
               px={6}
@@ -53,7 +53,11 @@ const Home: NextPage = () => {
               bg={"green.400"}
               _hover={{ bg: "green.500" }}
             >
-              {translations[finalLocale]["main-page"]["list-of-initiatives-button"]}
+              {
+                translations[finalLocale]["main-page"][
+                  "list-of-initiatives-button"
+                ]
+              }
             </Button>
           </Link>
           <Link href={config.addNewEntityFormLink} target="_blank">
