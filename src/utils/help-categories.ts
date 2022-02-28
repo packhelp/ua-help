@@ -1,5 +1,3 @@
-import { StringIterator } from "lodash"
-
 export const helpCategory: {
   id: string
   name: string
