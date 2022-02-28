@@ -8,7 +8,7 @@ type Translation = {
 export const translations: Translation = {
   "en-US": {
     "/initiatives": "Initiatives",
-    "/information/df245e9b8f824a93b58f30730034a5c7": "Information",
+    "/information/ade08590c3fc447a815ed413588e66f7": "Information",
     "main-page": {
       "title-1": "List of initiatives",
       "title-2": "helping Ukraine",
@@ -47,7 +47,7 @@ export const translations: Translation = {
   },
   "pl-PL": {
     "/initiatives": "Inicjatywy",
-    "/information/df245e9b8f824a93b58f30730034a5c7": "Informacje",
+    "/information/ade08590c3fc447a815ed413588e66f7": "Informacje",
     "main-page": {
       "title-1": "Baza inicjatyw",
       "title-2": "pomagających Ukrainie",
