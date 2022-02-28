@@ -13,7 +13,7 @@ export const InitiativesList = (props: InitiativesListTileProps) => {
   const { data, locale } = props
 
   // @ts-ignore
-  const isMobile = navigator.userAgentData.mobile
+  const isMobile = navigator && navigator.userAgentData.mobile
 
   const onShareClick = async (url: string) => {
     if (!isMobile) {
