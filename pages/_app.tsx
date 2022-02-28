@@ -20,7 +20,11 @@ import "katex/dist/katex.min.css"
 import "./../public/notion-override.css"
 import { RootContainerWrapper } from "../src/services/_container.root-wrapper"
 
-if (typeof global.navigator === 'undefined') global.navigator = undefined as any;
+// if (typeof global.navigator === 'undefined') global.navigator = {
+//     userAgentData: {
+//         mobile: false
+//     }
+// } as any;
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
