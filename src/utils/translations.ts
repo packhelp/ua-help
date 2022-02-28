@@ -30,7 +30,7 @@ export const translations: Translation = {
       email: "Email",
       "area-covered": "Area covered",
     },
-    "generic": {
+    generic: {
       email: "Email",
       website: "Website",
       phone: "Phone number",
@@ -42,8 +42,8 @@ export const translations: Translation = {
       comment: "Comment",
       report: "Report",
       "entity-information": "Entity information",
-      "filter-by-type-of-help": "Filter by type of help"
-    }
+      "filter-by-type-of-help": "Filter by type of help",
+    },
   },
   "pl-PL": {
     "/charity-list": "Inicjatywy",
@@ -69,7 +69,7 @@ export const translations: Translation = {
       email: "E-mail",
       "area-covered": "Miejsce pomocy",
     },
-    "generic": {
+    generic: {
       email: "Email",
       website: "Strona",
       phone: "Telefon",
@@ -81,8 +81,8 @@ export const translations: Translation = {
       comment: "Skomentuj",
       report: "Zgłoś naruszenie",
       "entity-information": "Informacje o bycie",
-      "filter-by-type-of-help": "Wyfiltruj po typie pomocy"
-    }
+      "filter-by-type-of-help": "Wyfiltruj po typie pomocy",
+    },
   },
   "uk-UA": {
     "/charity-list": "Inicjatywy",
@@ -107,7 +107,7 @@ export const translations: Translation = {
       email: "<missing_translation>",
       "area-covered": "<missing_translation>",
     },
-    "generic": {
+    generic: {
       email: "<missing_translation>",
       website: "<missing_translation>",
       phone: "<missing_translation>",
@@ -120,6 +120,6 @@ export const translations: Translation = {
       report: "<missing_translation>",
       "entity-information": "<missing_translation>",
       "filter-by-type-of-help": "<missing_translation>",
-    }
+    },
   },
 }

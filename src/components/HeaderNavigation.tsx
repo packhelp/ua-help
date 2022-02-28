@@ -6,9 +6,9 @@ import {
   Box,
   Stack,
   useColorModeValue,
-  useDisclosure
+  useDisclosure,
 } from "@chakra-ui/react"
-import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons"
 import { NavigationLinks } from "./NavigationLinks"
 import { RegionSwitcher } from "./RegionSwitcher"
 
@@ -31,7 +31,10 @@ export const HeaderNavigation = () => {
 
 const Desktop = () => {
   return (
-    <Flex justifyContent={"space-between"} display={{ base: "none", sm: "none", md: "flex" }}>
+    <Flex
+      justifyContent={"space-between"}
+      display={{ base: "none", sm: "none", md: "flex" }}
+    >
       <div>
         <NavigationLinks />
       </div>
@@ -41,11 +44,20 @@ const Desktop = () => {
 }
 
 const Mobile = () => {
-  const { isOpen = false, onOpen, onClose } = useDisclosure();
+  const { isOpen = false, onOpen, onClose } = useDisclosure()
 
   return (
-    <Flex alignItems={"center"} flexDirection={"column"} display={{ base: "flex", sm: "flex", md: "none" }}>
-      <Flex alignItems={"center"} justifyContent={"space-between"} width={"100%"} paddingRight={"10px"}>
+    <Flex
+      alignItems={"center"}
+      flexDirection={"column"}
+      display={{ base: "flex", sm: "flex", md: "none" }}
+    >
+      <Flex
+        alignItems={"center"}
+        justifyContent={"space-between"}
+        width={"100%"}
+        paddingRight={"10px"}
+      >
         <IconButton
           display={{ base: "flex", md: "none" }}
           alignItems={"center"}
@@ -54,13 +66,13 @@ const Mobile = () => {
           color={useColorModeValue("gray.800", "inherit")}
           variant="ghost"
           icon={isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
-          onClick={isOpen ? onClose: onOpen}
+          onClick={isOpen ? onClose : onOpen}
         />
         <RegionSwitcher />
       </Flex>
       {isOpen && (
         <Box width={"100%"}>
-          <Stack as={'nav'} spacing={4}>
+          <Stack as={"nav"} spacing={4}>
             <NavigationLinks />
           </Stack>
         </Box>

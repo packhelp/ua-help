@@ -11,7 +11,13 @@ import {
   useColorModeValue,
   List,
   ListItem,
-  Link, Flex, SpaceProps, HStack, Tag, Button, Divider,
+  Link,
+  Flex,
+  SpaceProps,
+  HStack,
+  Tag,
+  Button,
+  Divider,
 } from "@chakra-ui/react"
 import { config } from "../../src/config"
 import { Locales, translations } from "../../src/utils/translations"
@@ -47,16 +53,21 @@ export default function Simple() {
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 18, md: 6 }}>
+        py={{ base: 18, md: 6 }}
+      >
         <Stack spacing={{ base: 6, md: 10 }}>
           <Box as={"header"}>
             <Heading
               lineHeight={1.1}
               fontWeight={600}
-              fontSize={{ base: "2xl", sm: "4xl", lg: "5xl" }}>
+              fontSize={{ base: "2xl", sm: "4xl", lg: "5xl" }}
+            >
               {data.fullName}
             </Heading>
-            <Tags tags={["Collecting clothes", "Accommodation", "Coordination"]} marginTop="3" />
+            <Tags
+              tags={["Collecting clothes", "Accommodation", "Coordination"]}
+              marginTop="3"
+            />
           </Box>
 
           <Stack
@@ -66,16 +77,15 @@ export default function Simple() {
               <StackDivider
                 borderColor={useColorModeValue("gray.200", "gray.600")}
               />
-            }>
+            }
+          >
             <VStack spacing={{ base: 4, sm: 6 }}>
               {descriptionSplitByNewLines.map((descriptionLine, index) => (
                 <Text key={index} fontSize={"lg"}>
                   {descriptionLine}
                 </Text>
               ))}
-
             </VStack>
-
           </Stack>
         </Stack>
         <Flex>
@@ -85,8 +95,13 @@ export default function Simple() {
               color={useColorModeValue("yellow.500", "yellow.300")}
               fontWeight={"500"}
               textTransform={"uppercase"}
-              mb={"4"}>
-              {translations[finalLocale]["details-page"]["entity-information-section-title"]}
+              mb={"4"}
+            >
+              {
+                translations[finalLocale]["details-page"][
+                  "entity-information-section-title"
+                ]
+              }
             </Text>
 
             <List spacing={2}>
@@ -106,25 +121,19 @@ export default function Simple() {
                 <Text as={"span"} fontWeight={"bold"}>
                   {translations[finalLocale]["details-page"]["website"]}:
                 </Text>{" "}
-                <Link href={data.website}>
-                  {data.website}
-                </Link>
+                <Link href={data.website}>{data.website}</Link>
               </ListItem>
               <ListItem>
                 <Text as={"span"} fontWeight={"bold"}>
                   {translations[finalLocale]["details-page"]["phone"]}:
                 </Text>{" "}
-                <Link href={`tel:${data.phone}`}>
-                  {data.phone}
-                </Link>
+                <Link href={`tel:${data.phone}`}>{data.phone}</Link>
               </ListItem>
               <ListItem>
                 <Text as={"span"} fontWeight={"bold"}>
                   {translations[finalLocale]["details-page"]["email"]}:
                 </Text>{" "}
-                <Link href={`mail:${data.email}`}>
-                  {data.email}
-                </Link>
+                <Link href={`mail:${data.email}`}>{data.email}</Link>
               </ListItem>
               <ListItem>
                 <Text as={"span"} fontWeight={"bold"}>
@@ -135,16 +144,17 @@ export default function Simple() {
             </List>
             <Divider borderColor="gray.200" mt="20px" mb="20px" />
             <StackDivider borderColor="gray.200" />
-            <VStack
-              spacing={4}
-              align="stretch"
-            >
+            <VStack spacing={4} align="stretch">
               <Button colorScheme="blue" size="lg" minWidth="100%">
                 {translations[finalLocale]["details-page"]["comment-button"]}
               </Button>
               <Link href={config.reportAbuseFormLink} target="_blank">
                 <Button colorScheme="red" size="lg" minWidth="100%">
-                  {translations[finalLocale]["details-page"]["report-abuse-button"]}
+                  {
+                    translations[finalLocale]["details-page"][
+                      "report-abuse-button"
+                    ]
+                  }
                 </Button>
               </Link>
             </VStack>
